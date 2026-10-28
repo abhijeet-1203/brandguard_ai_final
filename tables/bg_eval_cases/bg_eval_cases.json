@@ -1,0 +1,78 @@
+{
+  "name": "bg_eval_cases",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "case_key",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 120
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 300
+    },
+    {
+      "name": "content",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "content_type",
+      "type": "TEXT"
+    },
+    {
+      "name": "campaign",
+      "type": "TEXT"
+    },
+    {
+      "name": "expected_outcome",
+      "type": "ENUM",
+      "options": [
+        "clean",
+        "flagged"
+      ],
+      "required": true,
+      "default": "flagged"
+    },
+    {
+      "name": "expected_categories",
+      "type": "JSON"
+    },
+    {
+      "name": "expected_rules",
+      "type": "JSON"
+    },
+    {
+      "name": "expected_evidence_status",
+      "type": "JSON"
+    },
+    {
+      "name": "ai_relevant",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "label_source",
+      "type": "TEXT",
+      "max_length": 120
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    },
+    {
+      "name": "is_active",
+      "type": "BOOLEAN",
+      "default": true
+    }
+  ]
+}

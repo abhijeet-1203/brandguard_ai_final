@@ -1,0 +1,51 @@
+{
+  "name": "brandguard-correction-writer",
+  "description": "Rewrites a flagged span of content so it satisfies an approved brand rule, without inventing facts.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [],
+  "visibility": "POD",
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "corrected_text": {
+        "type": "string",
+        "description": "Replacement for the flagged span only."
+      },
+      "rationale": {
+        "type": "string"
+      },
+      "changes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "preserves_meaning": {
+        "type": "boolean"
+      },
+      "uses_approved_facts": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Fact ids used, if any."
+      },
+      "warnings": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "corrected_text",
+      "rationale",
+      "preserves_meaning"
+    ]
+  },
+  "permissions": {
+    "grants": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "bg_corrections",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "finding_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_findings.id"
+      }
+    },
+    {
+      "name": "review_id",
+      "type": "UUID"
+    },
+    {
+      "name": "proposed_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "rationale",
+      "type": "TEXT"
+    },
+    {
+      "name": "instructions",
+      "type": "TEXT"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "proposed",
+        "accepted",
+        "rejected",
+        "edited",
+        "regenerated",
+        "applied",
+        "restored"
+      ],
+      "required": true,
+      "default": "proposed"
+    },
+    {
+      "name": "source",
+      "type": "ENUM",
+      "options": [
+        "ai",
+        "human"
+      ],
+      "default": "ai"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "applied_version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "applied_at",
+      "type": "DATETIME"
+    }
+  ]
+}

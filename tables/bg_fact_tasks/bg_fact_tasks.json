@@ -1,0 +1,81 @@
+{
+  "name": "bg_fact_tasks",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "fact_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "claim",
+      "type": "TEXT"
+    },
+    {
+      "name": "owner",
+      "type": "TEXT",
+      "max_length": 200
+    },
+    {
+      "name": "task_type",
+      "type": "ENUM",
+      "options": [
+        "reverify",
+        "expired",
+        "dependency_review"
+      ],
+      "required": true,
+      "default": "reverify"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "open",
+        "in_progress",
+        "done",
+        "dismissed"
+      ],
+      "required": true,
+      "default": "open"
+    },
+    {
+      "name": "due_date",
+      "type": "DATE"
+    },
+    {
+      "name": "expires_at",
+      "type": "DATE"
+    },
+    {
+      "name": "days_to_expiry",
+      "type": "INTEGER"
+    },
+    {
+      "name": "dependent_reviews",
+      "type": "JSON"
+    },
+    {
+      "name": "notified_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    },
+    {
+      "name": "closed_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "closed_at",
+      "type": "DATETIME"
+    }
+  ]
+}

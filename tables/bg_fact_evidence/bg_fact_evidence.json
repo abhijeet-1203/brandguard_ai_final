@@ -1,0 +1,61 @@
+{
+  "name": "bg_fact_evidence",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "fact_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_facts.id"
+      }
+    },
+    {
+      "name": "evidence_type",
+      "type": "ENUM",
+      "options": [
+        "lab_test",
+        "certificate",
+        "document",
+        "internal_record",
+        "external_source",
+        "testimonial"
+      ]
+    },
+    {
+      "name": "title",
+      "type": "TEXT"
+    },
+    {
+      "name": "description",
+      "type": "TEXT"
+    },
+    {
+      "name": "source_document_id",
+      "type": "UUID"
+    },
+    {
+      "name": "source_location",
+      "type": "TEXT"
+    },
+    {
+      "name": "url",
+      "type": "TEXT"
+    },
+    {
+      "name": "strength",
+      "type": "ENUM",
+      "options": [
+        "strong",
+        "moderate",
+        "weak",
+        "unverified"
+      ]
+    },
+    {
+      "name": "added_by",
+      "type": "TEXT"
+    }
+  ]
+}

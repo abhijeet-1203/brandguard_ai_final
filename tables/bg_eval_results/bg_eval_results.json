@@ -1,0 +1,77 @@
+{
+  "name": "bg_eval_results",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "run_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "case_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "case_key",
+      "type": "TEXT",
+      "max_length": 120
+    },
+    {
+      "name": "mode",
+      "type": "ENUM",
+      "options": [
+        "deterministic",
+        "ai",
+        "hybrid"
+      ],
+      "required": true,
+      "default": "deterministic"
+    },
+    {
+      "name": "expected_categories",
+      "type": "JSON"
+    },
+    {
+      "name": "expected_rules",
+      "type": "JSON"
+    },
+    {
+      "name": "detected_categories",
+      "type": "JSON"
+    },
+    {
+      "name": "detected_rules",
+      "type": "JSON"
+    },
+    {
+      "name": "detected_evidence",
+      "type": "JSON"
+    },
+    {
+      "name": "true_positives",
+      "type": "INTEGER"
+    },
+    {
+      "name": "false_positives",
+      "type": "INTEGER"
+    },
+    {
+      "name": "false_negatives",
+      "type": "INTEGER"
+    },
+    {
+      "name": "outcome_correct",
+      "type": "BOOLEAN"
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    },
+    {
+      "name": "latency_ms",
+      "type": "INTEGER"
+    }
+  ]
+}

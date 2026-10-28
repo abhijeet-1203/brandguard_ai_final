@@ -1,0 +1,75 @@
+{
+  "name": "bg_analysis_runs",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_reviews.id"
+      }
+    },
+    {
+      "name": "version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "queued",
+        "running",
+        "completed",
+        "failed"
+      ],
+      "required": true,
+      "default": "queued"
+    },
+    {
+      "name": "model",
+      "type": "TEXT"
+    },
+    {
+      "name": "analysis_version",
+      "type": "TEXT"
+    },
+    {
+      "name": "started_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "completed_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "error_message",
+      "type": "TEXT"
+    },
+    {
+      "name": "stats",
+      "type": "JSON"
+    },
+    {
+      "name": "findings_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "deterministic_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "ai_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "sources_used",
+      "type": "JSON"
+    },
+    {
+      "name": "triggered_by",
+      "type": "TEXT"
+    }
+  ]
+}

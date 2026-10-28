@@ -1,0 +1,66 @@
+{
+  "name": "brandguard-minimal-editor",
+  "description": "Rewrites only the flagged span of content so it satisfies an approved brand rule, preserving the author's tone and facts.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [],
+  "visibility": "POD",
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "edits": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "finding_id": {
+              "type": "string",
+              "description": "Id of the finding this edit addresses."
+            },
+            "original_text": {
+              "type": "string",
+              "description": "Exact span copied from the content."
+            },
+            "replacement": {
+              "type": "string",
+              "description": "Drop-in replacement for that span."
+            },
+            "rule_code": {
+              "type": "string",
+              "description": "Code of the rule or fact this edit satisfies."
+            },
+            "reason": {
+              "type": "string"
+            },
+            "minimal": {
+              "type": "boolean",
+              "description": "False if a compliant fix needs a larger rewrite."
+            }
+          },
+          "required": [
+            "finding_id",
+            "original_text",
+            "replacement",
+            "reason"
+          ]
+        }
+      },
+      "overall_note": {
+        "type": "string"
+      },
+      "warnings": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "edits"
+    ]
+  },
+  "permissions": {
+    "grants": []
+  }
+}

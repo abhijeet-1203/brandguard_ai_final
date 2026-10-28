@@ -1,0 +1,82 @@
+{
+  "name": "bg_publish_events",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "action",
+      "type": "ENUM",
+      "options": [
+        "prepare",
+        "package",
+        "draft_push",
+        "blocked",
+        "failed",
+        "withdrawn"
+      ],
+      "required": true,
+      "default": "prepare"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "ok",
+        "blocked",
+        "failed"
+      ],
+      "required": true,
+      "default": "ok"
+    },
+    {
+      "name": "target",
+      "type": "TEXT",
+      "max_length": 200
+    },
+    {
+      "name": "connector",
+      "type": "TEXT",
+      "max_length": 120
+    },
+    {
+      "name": "content_hash",
+      "type": "TEXT",
+      "max_length": 80
+    },
+    {
+      "name": "manifest",
+      "type": "JSON"
+    },
+    {
+      "name": "package_path",
+      "type": "TEXT",
+      "max_length": 700
+    },
+    {
+      "name": "detail",
+      "type": "TEXT"
+    },
+    {
+      "name": "actor_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_at_override",
+      "type": "DATETIME"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "bg_ai_providers",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "provider",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "model",
+      "type": "TEXT"
+    },
+    {
+      "name": "configured",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "is_default",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "status_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "data_flow_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "last_checked_at",
+      "type": "DATETIME"
+    }
+  ]
+}

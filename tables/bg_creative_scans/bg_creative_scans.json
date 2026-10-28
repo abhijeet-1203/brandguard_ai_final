@@ -1,0 +1,95 @@
+{
+  "name": "bg_creative_scans",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "review_id",
+      "type": "UUID"
+    },
+    {
+      "name": "file_path",
+      "type": "TEXT",
+      "max_length": 700
+    },
+    {
+      "name": "file_name",
+      "type": "TEXT",
+      "max_length": 300
+    },
+    {
+      "name": "file_kind",
+      "type": "ENUM",
+      "options": [
+        "image",
+        "pdf",
+        "presentation",
+        "unknown"
+      ],
+      "required": true,
+      "default": "image"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "completed",
+        "partial",
+        "failed"
+      ],
+      "required": true,
+      "default": "completed"
+    },
+    {
+      "name": "engine",
+      "type": "TEXT"
+    },
+    {
+      "name": "decoder",
+      "type": "TEXT",
+      "max_length": 120
+    },
+    {
+      "name": "page_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "analysed_pages",
+      "type": "INTEGER"
+    },
+    {
+      "name": "score",
+      "type": "FLOAT"
+    },
+    {
+      "name": "summary",
+      "type": "TEXT"
+    },
+    {
+      "name": "ocr_engine",
+      "type": "TEXT",
+      "max_length": 120
+    },
+    {
+      "name": "ocr_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "limitations",
+      "type": "JSON"
+    },
+    {
+      "name": "findings_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    }
+  ]
+}

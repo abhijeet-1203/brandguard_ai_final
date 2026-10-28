@@ -1,0 +1,72 @@
+{
+  "name": "bg_campaign_scans",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "campaign",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 200
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "completed",
+        "failed"
+      ],
+      "required": true,
+      "default": "completed"
+    },
+    {
+      "name": "consistency_score",
+      "type": "FLOAT"
+    },
+    {
+      "name": "review_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "channel_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "signals",
+      "type": "JSON"
+    },
+    {
+      "name": "conflicts",
+      "type": "JSON"
+    },
+    {
+      "name": "channels",
+      "type": "JSON"
+    },
+    {
+      "name": "summary",
+      "type": "TEXT"
+    },
+    {
+      "name": "engine_version",
+      "type": "TEXT"
+    },
+    {
+      "name": "scanned_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "scanned_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "error_message",
+      "type": "TEXT"
+    }
+  ]
+}

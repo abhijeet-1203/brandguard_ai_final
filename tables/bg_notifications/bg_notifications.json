@@ -1,0 +1,45 @@
+{
+  "name": "bg_notifications",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID"
+    },
+    {
+      "name": "recipient_user_id",
+      "type": "UUID"
+    },
+    {
+      "name": "user_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "body",
+      "type": "TEXT"
+    },
+    {
+      "name": "kind",
+      "type": "TEXT"
+    },
+    {
+      "name": "link_type",
+      "type": "TEXT"
+    },
+    {
+      "name": "link_id",
+      "type": "UUID"
+    },
+    {
+      "name": "is_read",
+      "type": "BOOLEAN",
+      "default": false
+    }
+  ]
+}

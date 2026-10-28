@@ -1,0 +1,41 @@
+{
+  "name": "bg_organizations",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "name",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 200
+    },
+    {
+      "name": "slug",
+      "type": "TEXT",
+      "required": true,
+      "unique": true,
+      "max_length": 80
+    },
+    {
+      "name": "description",
+      "type": "TEXT"
+    },
+    {
+      "name": "tone_summary",
+      "type": "TEXT"
+    },
+    {
+      "name": "primary_contact",
+      "type": "TEXT"
+    },
+    {
+      "name": "settings",
+      "type": "JSON"
+    },
+    {
+      "name": "is_active",
+      "type": "BOOLEAN",
+      "default": true
+    }
+  ]
+}

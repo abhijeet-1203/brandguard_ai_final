@@ -1,0 +1,201 @@
+{
+  "name": "brandguard-creative-inspector",
+  "description": "Reads text, word boxes, reading confidence and layout out of one creative page (transcription and observation only; no brand judgement).",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [
+    "WORKSPACE_CLI"
+  ],
+  "visibility": "POD",
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "All visible text, transcribed in reading order."
+      },
+      "words": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "box": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "w": {
+                  "type": "number"
+                },
+                "h": {
+                  "type": "number"
+                }
+              }
+            },
+            "confidence": {
+              "type": "number",
+              "description": "0-1 self-estimated reading confidence"
+            }
+          },
+          "required": [
+            "text",
+            "confidence"
+          ]
+        }
+      },
+      "lines": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "box": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "w": {
+                  "type": "number"
+                },
+                "h": {
+                  "type": "number"
+                }
+              }
+            },
+            "confidence": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "second_read": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "disagreements": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "headline": {
+        "type": "string"
+      },
+      "price_text": {
+        "type": "string"
+      },
+      "disclaimer_text": {
+        "type": "string"
+      },
+      "colours": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "hex": {
+              "type": "string"
+            },
+            "share": {
+              "type": "string"
+            },
+            "where": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "logo": {
+        "type": "object",
+        "properties": {
+          "present": {
+            "type": "boolean"
+          },
+          "box": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "w": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "stretched": {
+            "type": "boolean"
+          },
+          "recoloured": {
+            "type": "boolean"
+          },
+          "crowded": {
+            "type": "boolean"
+          },
+          "low_resolution": {
+            "type": "boolean"
+          },
+          "clear_space_note": {
+            "type": "string"
+          }
+        }
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "text",
+      "limitations"
+    ]
+  },
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "folder",
+        "resource_name": "/brandguard",
+        "permission_ids": [
+          "folder.read",
+          "folder.write"
+        ]
+      }
+    ]
+  }
+}

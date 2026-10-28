@@ -1,0 +1,56 @@
+{
+  "name": "bg_calibration_runs",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "band",
+      "type": "ENUM",
+      "options": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "required": true
+    },
+    {
+      "name": "predicted_midpoint",
+      "type": "FLOAT"
+    },
+    {
+      "name": "scored_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "decided_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "rework_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "observed_rate",
+      "type": "FLOAT"
+    },
+    {
+      "name": "sufficient",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "note",
+      "type": "TEXT"
+    },
+    {
+      "name": "computed_at",
+      "type": "DATETIME"
+    }
+  ]
+}

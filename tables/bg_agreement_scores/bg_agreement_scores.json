@@ -1,0 +1,69 @@
+{
+  "name": "bg_agreement_scores",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "scope",
+      "type": "ENUM",
+      "options": [
+        "rule",
+        "reviewer",
+        "workspace"
+      ],
+      "required": true,
+      "default": "rule"
+    },
+    {
+      "name": "subject_key",
+      "type": "TEXT",
+      "max_length": 200
+    },
+    {
+      "name": "subject_label",
+      "type": "TEXT",
+      "max_length": 300
+    },
+    {
+      "name": "decision_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "agreement_rate",
+      "type": "FLOAT"
+    },
+    {
+      "name": "kappa",
+      "type": "FLOAT"
+    },
+    {
+      "name": "strictness_index",
+      "type": "FLOAT"
+    },
+    {
+      "name": "interpretation",
+      "type": "ENUM",
+      "options": [
+        "consistent",
+        "unclear_rule",
+        "strict_reviewer",
+        "insufficient_data"
+      ],
+      "required": true,
+      "default": "insufficient_data"
+    },
+    {
+      "name": "detail",
+      "type": "TEXT"
+    },
+    {
+      "name": "computed_at",
+      "type": "DATETIME"
+    }
+  ]
+}

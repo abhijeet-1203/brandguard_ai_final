@@ -1,0 +1,103 @@
+{
+  "name": "bg_visual_scans",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "review_id",
+      "type": "UUID"
+    },
+    {
+      "name": "image_path",
+      "type": "TEXT",
+      "max_length": 700
+    },
+    {
+      "name": "image_name",
+      "type": "TEXT",
+      "max_length": 300
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "completed",
+        "failed",
+        "unsupported"
+      ],
+      "required": true,
+      "default": "completed"
+    },
+    {
+      "name": "engine",
+      "type": "TEXT"
+    },
+    {
+      "name": "ocr_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "ocr_source",
+      "type": "ENUM",
+      "options": [
+        "vision_model",
+        "none"
+      ],
+      "default": "none"
+    },
+    {
+      "name": "width",
+      "type": "INTEGER"
+    },
+    {
+      "name": "height",
+      "type": "INTEGER"
+    },
+    {
+      "name": "palette",
+      "type": "JSON"
+    },
+    {
+      "name": "geometry",
+      "type": "JSON"
+    },
+    {
+      "name": "regions",
+      "type": "JSON"
+    },
+    {
+      "name": "palette_conformance",
+      "type": "FLOAT"
+    },
+    {
+      "name": "score",
+      "type": "FLOAT"
+    },
+    {
+      "name": "overlay_path",
+      "type": "TEXT",
+      "max_length": 700
+    },
+    {
+      "name": "findings_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "limitations",
+      "type": "JSON"
+    },
+    {
+      "name": "error_message",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    }
+  ]
+}

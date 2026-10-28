@@ -1,0 +1,76 @@
+{
+  "name": "bg_publish_packages",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "content_hash",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 80
+    },
+    {
+      "name": "manifest_hash",
+      "type": "TEXT",
+      "max_length": 80
+    },
+    {
+      "name": "package_path",
+      "type": "TEXT",
+      "max_length": 700
+    },
+    {
+      "name": "signed",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "signature",
+      "type": "TEXT",
+      "max_length": 200
+    },
+    {
+      "name": "signature_method",
+      "type": "TEXT",
+      "max_length": 120
+    },
+    {
+      "name": "contents",
+      "type": "JSON"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "ready",
+        "pushed",
+        "superseded",
+        "blocked"
+      ],
+      "required": true,
+      "default": "ready"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "pushed_at",
+      "type": "DATETIME"
+    }
+  ]
+}

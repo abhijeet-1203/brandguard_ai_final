@@ -1,0 +1,75 @@
+{
+  "name": "bg_policies",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true,
+      "unique": true
+    },
+    {
+      "name": "require_separation_of_duties",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "block_approval_on_mandatory",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "critical_requires_compliance_reviewer",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "high_risk_requires_second_reviewer",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "ai_analysis_enabled",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "external_ai_allowed",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "confidential_content_to_external_ai",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "auto_publish_enabled",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "require_review_after_approved_edit",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "retention_days",
+      "type": "INTEGER",
+      "default": 365
+    },
+    {
+      "name": "ai_model",
+      "type": "TEXT"
+    },
+    {
+      "name": "analysis_version",
+      "type": "TEXT"
+    },
+    {
+      "name": "updated_by",
+      "type": "TEXT"
+    }
+  ]
+}

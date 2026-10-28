@@ -1,0 +1,75 @@
+{
+  "name": "bg_approval_chains",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 200
+    },
+    {
+      "name": "content_type",
+      "type": "TEXT",
+      "max_length": 60
+    },
+    {
+      "name": "min_approvals",
+      "type": "INTEGER",
+      "default": 1
+    },
+    {
+      "name": "second_reviewer_required",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "critical_requires_compliance",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "block_on_mandatory",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    {
+      "name": "steps",
+      "type": "JSON"
+    },
+    {
+      "name": "publish_target",
+      "type": "TEXT",
+      "max_length": 200
+    },
+    {
+      "name": "is_default",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "active",
+        "archived"
+      ],
+      "required": true,
+      "default": "active"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "updated_by",
+      "type": "TEXT"
+    }
+  ]
+}

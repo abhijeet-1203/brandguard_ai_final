@@ -1,0 +1,101 @@
+{
+  "name": "bg_claim_provenance",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "claim_text",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "claim_key",
+      "type": "TEXT",
+      "max_length": 200
+    },
+    {
+      "name": "source_type",
+      "type": "ENUM",
+      "options": [
+        "finding",
+        "fact",
+        "manual"
+      ],
+      "required": true,
+      "default": "fact"
+    },
+    {
+      "name": "finding_id",
+      "type": "UUID"
+    },
+    {
+      "name": "fact_id",
+      "type": "UUID"
+    },
+    {
+      "name": "review_id",
+      "type": "UUID"
+    },
+    {
+      "name": "document_id",
+      "type": "UUID"
+    },
+    {
+      "name": "source_passage",
+      "type": "TEXT"
+    },
+    {
+      "name": "source_location",
+      "type": "TEXT"
+    },
+    {
+      "name": "owner",
+      "type": "TEXT"
+    },
+    {
+      "name": "evidence_strength",
+      "type": "ENUM",
+      "options": [
+        "strong",
+        "moderate",
+        "weak",
+        "unverified"
+      ]
+    },
+    {
+      "name": "expires_at",
+      "type": "DATE"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "valid",
+        "expiring",
+        "expired",
+        "unsupported",
+        "orphaned",
+        "superseded"
+      ],
+      "required": true,
+      "default": "valid"
+    },
+    {
+      "name": "status_reason",
+      "type": "TEXT"
+    },
+    {
+      "name": "last_checked_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    }
+  ]
+}

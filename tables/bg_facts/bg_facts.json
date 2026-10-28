@@ -1,0 +1,112 @@
+{
+  "name": "bg_facts",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "statement",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "category",
+      "type": "ENUM",
+      "options": [
+        "product_specification",
+        "price",
+        "warranty",
+        "discount",
+        "availability",
+        "company_description",
+        "marketing_statement",
+        "certification",
+        "promotional_claim",
+        "disclaimer",
+        "other"
+      ],
+      "required": true
+    },
+    {
+      "name": "scope",
+      "type": "TEXT"
+    },
+    {
+      "name": "value_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "numeric_value",
+      "type": "FLOAT"
+    },
+    {
+      "name": "unit",
+      "type": "TEXT"
+    },
+    {
+      "name": "match_keywords",
+      "type": "JSON"
+    },
+    {
+      "name": "source_document_id",
+      "type": "UUID"
+    },
+    {
+      "name": "source_location",
+      "type": "TEXT"
+    },
+    {
+      "name": "verification_status",
+      "type": "ENUM",
+      "options": [
+        "verified",
+        "pending",
+        "rejected",
+        "superseded",
+        "no_evidence"
+      ],
+      "required": true,
+      "default": "pending"
+    },
+    {
+      "name": "approval_status",
+      "type": "ENUM",
+      "options": [
+        "approved",
+        "pending",
+        "rejected",
+        "superseded"
+      ],
+      "default": "pending"
+    },
+    {
+      "name": "effective_date",
+      "type": "DATE"
+    },
+    {
+      "name": "expiration_date",
+      "type": "DATE"
+    },
+    {
+      "name": "owner",
+      "type": "TEXT"
+    },
+    {
+      "name": "last_verified_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "version",
+      "type": "INTEGER",
+      "default": 1
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "bg_edit_reports",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "finding_id",
+      "type": "UUID"
+    },
+    {
+      "name": "review_version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "original_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "proposed_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "change_map",
+      "type": "JSON"
+    },
+    {
+      "name": "rules_addressed",
+      "type": "JSON"
+    },
+    {
+      "name": "guard_warnings",
+      "type": "JSON"
+    },
+    {
+      "name": "before_summary",
+      "type": "JSON"
+    },
+    {
+      "name": "after_summary",
+      "type": "JSON"
+    },
+    {
+      "name": "resolved_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "remaining_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "new_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "proposed",
+        "applied",
+        "rejected"
+      ],
+      "default": "proposed"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "applied_version",
+      "type": "INTEGER"
+    }
+  ]
+}

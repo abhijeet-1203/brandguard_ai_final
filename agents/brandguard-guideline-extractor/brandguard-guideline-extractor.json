@@ -1,0 +1,138 @@
+{
+  "name": "brandguard-guideline-extractor",
+  "description": "Proposes candidate brand guideline rules from an uploaded brand document, with source quotes, for human approval.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [],
+  "visibility": "POD",
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "document_summary": {
+        "type": "string"
+      },
+      "extraction_note": {
+        "type": "string"
+      },
+      "rules": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string",
+              "enum": [
+                "tone",
+                "terminology",
+                "messaging",
+                "factual_accuracy",
+                "promotional_claim",
+                "visual_identity",
+                "accessibility",
+                "confidentiality",
+                "legal_compliance",
+                "formatting"
+              ]
+            },
+            "rule_type": {
+              "type": "string",
+              "enum": [
+                "prohibited_term",
+                "required_term",
+                "deprecated_term",
+                "tone_rule",
+                "messaging_rule",
+                "numeric_fact",
+                "required_disclaimer",
+                "claim_policy",
+                "confidentiality_rule",
+                "visual_rule",
+                "accessibility_rule",
+                "formatting_rule"
+              ]
+            },
+            "severity": {
+              "type": "string",
+              "enum": [
+                "critical",
+                "high",
+                "medium",
+                "low",
+                "informational"
+              ]
+            },
+            "enforcement": {
+              "type": "string",
+              "enum": [
+                "mandatory",
+                "recommended",
+                "advisory"
+              ]
+            },
+            "rule_text": {
+              "type": "string"
+            },
+            "terms": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "replace_with": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "compliant_examples": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "noncompliant_examples": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_quote": {
+              "type": "string"
+            },
+            "source_section": {
+              "type": "string"
+            },
+            "ambiguity_note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "category",
+            "rule_type",
+            "severity",
+            "enforcement",
+            "rule_text",
+            "source_quote"
+          ]
+        }
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "rules"
+    ]
+  },
+  "permissions": {
+    "grants": []
+  }
+}

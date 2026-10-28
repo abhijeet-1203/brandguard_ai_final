@@ -1,0 +1,56 @@
+{
+  "name": "bg_memberships",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "member_user_id",
+      "type": "UUID"
+    },
+    {
+      "name": "user_email",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 320
+    },
+    {
+      "name": "display_name",
+      "type": "TEXT"
+    },
+    {
+      "name": "role",
+      "type": "ENUM",
+      "required": true,
+      "options": [
+        "admin",
+        "brand_manager",
+        "creator",
+        "reviewer",
+        "compliance_reviewer"
+      ]
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "active",
+        "invited",
+        "suspended"
+      ],
+      "default": "active"
+    },
+    {
+      "name": "invited_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    }
+  ]
+}

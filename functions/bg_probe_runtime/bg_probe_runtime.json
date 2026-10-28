@@ -1,0 +1,12 @@
+{
+  "name": "bg_probe_runtime",
+  "description": "Diagnostic: what image, OCR and PDF capabilities does the function runtime actually have?",
+  "type": "API",
+  "visibility": "POD",
+  "code": {
+    "$file": "code.py"
+  },
+  "permissions": {
+    "grants": []
+  }
+}

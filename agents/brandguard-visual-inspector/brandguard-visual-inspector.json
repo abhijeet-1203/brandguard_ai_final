@@ -1,0 +1,106 @@
+{
+  "name": "brandguard-visual-inspector",
+  "description": "Reads text and layout out of a creative image (transcription and observation only; no brand judgement).",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [
+    "WORKSPACE_CLI"
+  ],
+  "visibility": "POD",
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Every piece of text visible in the image, transcribed exactly, line breaks preserved."
+      },
+      "headline": {
+        "type": "string"
+      },
+      "price_text": {
+        "type": "string"
+      },
+      "disclaimer_text": {
+        "type": "string"
+      },
+      "layout": {
+        "type": "object",
+        "properties": {
+          "logo_position": {
+            "type": "string",
+            "description": "e.g. 'top-left, x 0.05-0.31, y 0.23-0.61'"
+          },
+          "text_blocks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "main_visual": {
+            "type": "string"
+          }
+        }
+      },
+      "colours": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "hex": {
+              "type": "string"
+            },
+            "share": {
+              "type": "string"
+            },
+            "where": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "logo": {
+        "type": "object",
+        "properties": {
+          "present": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "distortion_note": {
+            "type": "string"
+          }
+        }
+      },
+      "typography_note": {
+        "type": "string"
+      },
+      "spacing_note": {
+        "type": "string"
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "text",
+      "limitations"
+    ]
+  },
+  "permissions": {
+    "grants": [
+      {
+        "resource_type": "folder",
+        "resource_name": "/brandguard",
+        "permission_ids": [
+          "folder.read",
+          "folder.write"
+        ]
+      }
+    ]
+  }
+}

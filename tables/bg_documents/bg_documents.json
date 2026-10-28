@@ -1,0 +1,79 @@
+{
+  "name": "bg_documents",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "kind",
+      "type": "ENUM",
+      "options": [
+        "guideline_source",
+        "fact_source",
+        "evidence",
+        "content_file",
+        "asset_file",
+        "policy"
+      ],
+      "required": true
+    },
+    {
+      "name": "file_path",
+      "type": "FILE_PATH",
+      "max_length": 700
+    },
+    {
+      "name": "mime_type",
+      "type": "TEXT"
+    },
+    {
+      "name": "size_bytes",
+      "type": "INTEGER"
+    },
+    {
+      "name": "page_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "extracted_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "extraction_status",
+      "type": "ENUM",
+      "options": [
+        "pending",
+        "extracted",
+        "partial",
+        "failed",
+        "no_text"
+      ],
+      "default": "pending"
+    },
+    {
+      "name": "extraction_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "uploaded_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "uploaded_by_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "metadata",
+      "type": "JSON"
+    }
+  ]
+}

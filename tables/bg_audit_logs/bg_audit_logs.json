@@ -1,0 +1,45 @@
+{
+  "name": "bg_audit_logs",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID"
+    },
+    {
+      "name": "actor_id",
+      "type": "UUID"
+    },
+    {
+      "name": "actor_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "actor_name",
+      "type": "TEXT"
+    },
+    {
+      "name": "action",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 80
+    },
+    {
+      "name": "subject_type",
+      "type": "TEXT"
+    },
+    {
+      "name": "subject_id",
+      "type": "UUID"
+    },
+    {
+      "name": "summary",
+      "type": "TEXT"
+    },
+    {
+      "name": "metadata",
+      "type": "JSON"
+    }
+  ]
+}

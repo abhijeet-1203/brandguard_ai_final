@@ -1,0 +1,182 @@
+{
+  "name": "bg_reviews",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 300
+    },
+    {
+      "name": "content_type",
+      "type": "ENUM",
+      "options": [
+        "social_post",
+        "marketing_email",
+        "advertisement",
+        "blog_post",
+        "product_description",
+        "landing_page",
+        "promotional_banner",
+        "product_brochure",
+        "marketing_document",
+        "other"
+      ],
+      "required": true
+    },
+    {
+      "name": "campaign",
+      "type": "TEXT"
+    },
+    {
+      "name": "audience",
+      "type": "TEXT"
+    },
+    {
+      "name": "channel",
+      "type": "TEXT"
+    },
+    {
+      "name": "language",
+      "type": "TEXT",
+      "default": "en"
+    },
+    {
+      "name": "context_notes",
+      "type": "TEXT"
+    },
+    {
+      "name": "source_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "current_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "draft",
+        "submitted",
+        "analysing",
+        "analysis_failed",
+        "awaiting_review",
+        "changes_requested",
+        "resubmitted",
+        "approved",
+        "rejected",
+        "archived"
+      ],
+      "required": true,
+      "default": "draft"
+    },
+    {
+      "name": "risk_level",
+      "type": "ENUM",
+      "options": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    {
+      "name": "current_version",
+      "type": "INTEGER",
+      "default": 1
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_by_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_by_name",
+      "type": "TEXT"
+    },
+    {
+      "name": "assigned_reviewer_id",
+      "type": "UUID"
+    },
+    {
+      "name": "assigned_reviewer_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "required_reviewer_role",
+      "type": "ENUM",
+      "options": [
+        "admin",
+        "brand_manager",
+        "reviewer",
+        "compliance_reviewer"
+      ]
+    },
+    {
+      "name": "analysis_run_id",
+      "type": "UUID"
+    },
+    {
+      "name": "analysis_status",
+      "type": "ENUM",
+      "options": [
+        "queued",
+        "running",
+        "completed",
+        "failed"
+      ],
+      "default": "queued"
+    },
+    {
+      "name": "submitted_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "decided_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "decision_reason",
+      "type": "TEXT"
+    },
+    {
+      "name": "model",
+      "type": "TEXT"
+    },
+    {
+      "name": "analysis_version",
+      "type": "TEXT"
+    },
+    {
+      "name": "attachment_paths",
+      "type": "JSON"
+    },
+    {
+      "name": "image_paths",
+      "type": "JSON"
+    },
+    {
+      "name": "error_message",
+      "type": "TEXT"
+    },
+    {
+      "name": "last_analysis_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "blocked_reason",
+      "type": "TEXT"
+    }
+  ]
+}

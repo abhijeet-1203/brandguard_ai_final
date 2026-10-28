@@ -1,0 +1,65 @@
+{
+  "name": "bg_comments",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID"
+    },
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_reviews.id"
+      }
+    },
+    {
+      "name": "finding_id",
+      "type": "UUID"
+    },
+    {
+      "name": "parent_id",
+      "type": "UUID"
+    },
+    {
+      "name": "author_id",
+      "type": "UUID"
+    },
+    {
+      "name": "author_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "author_name",
+      "type": "TEXT"
+    },
+    {
+      "name": "body",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "range_start",
+      "type": "INTEGER"
+    },
+    {
+      "name": "range_end",
+      "type": "INTEGER"
+    },
+    {
+      "name": "is_resolved",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "resolved_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "resolved_at",
+      "type": "DATETIME"
+    }
+  ]
+}

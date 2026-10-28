@@ -1,0 +1,37 @@
+{
+  "name": "bg_asset_versions",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "asset_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_assets.id"
+      }
+    },
+    {
+      "name": "version",
+      "type": "INTEGER",
+      "required": true
+    },
+    {
+      "name": "file_path",
+      "type": "FILE_PATH",
+      "max_length": 700
+    },
+    {
+      "name": "change_summary",
+      "type": "TEXT"
+    },
+    {
+      "name": "replaced_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "name": "bg_policy_suggestions",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 300
+    },
+    {
+      "name": "rationale",
+      "type": "TEXT"
+    },
+    {
+      "name": "root_cause_type",
+      "type": "ENUM",
+      "options": [
+        "rule_clarity",
+        "outdated_source",
+        "training_gap",
+        "campaign_specific",
+        "process_gap",
+        "insufficient_data"
+      ],
+      "required": true,
+      "default": "rule_clarity"
+    },
+    {
+      "name": "root_cause_detail",
+      "type": "TEXT"
+    },
+    {
+      "name": "evidence",
+      "type": "JSON"
+    },
+    {
+      "name": "affected_reviews",
+      "type": "JSON"
+    },
+    {
+      "name": "affected_campaigns",
+      "type": "JSON"
+    },
+    {
+      "name": "affected_content_types",
+      "type": "JSON"
+    },
+    {
+      "name": "rule_code",
+      "type": "TEXT"
+    },
+    {
+      "name": "guideline_id",
+      "type": "UUID"
+    },
+    {
+      "name": "proposed_rule",
+      "type": "JSON"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "proposed",
+        "draft_created",
+        "approved",
+        "dismissed"
+      ],
+      "default": "proposed"
+    },
+    {
+      "name": "draft_guideline_id",
+      "type": "UUID"
+    },
+    {
+      "name": "confidence_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "decided_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "decided_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "generated_at",
+      "type": "DATETIME"
+    }
+  ]
+}

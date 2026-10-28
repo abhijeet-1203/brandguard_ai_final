@@ -1,0 +1,73 @@
+{
+  "name": "bg_risk_scores",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "score",
+      "type": "FLOAT"
+    },
+    {
+      "name": "band",
+      "type": "ENUM",
+      "options": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "required": true,
+      "default": "low"
+    },
+    {
+      "name": "factors",
+      "type": "JSON"
+    },
+    {
+      "name": "explanation",
+      "type": "TEXT"
+    },
+    {
+      "name": "engine_version",
+      "type": "TEXT"
+    },
+    {
+      "name": "computed_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "outcome",
+      "type": "ENUM",
+      "options": [
+        "pending",
+        "approved",
+        "changes_requested",
+        "rejected",
+        "archived"
+      ],
+      "default": "pending"
+    },
+    {
+      "name": "outcome_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "outcome_source",
+      "type": "TEXT"
+    }
+  ]
+}

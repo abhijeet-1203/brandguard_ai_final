@@ -1,0 +1,92 @@
+{
+  "name": "bg_insights",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "insight_type",
+      "type": "ENUM",
+      "options": [
+        "recurring_terminology",
+        "recurring_claim",
+        "guideline_ambiguity",
+        "asset_misuse",
+        "high_revision_rate",
+        "reviewer_disagreement",
+        "rejected_corrections",
+        "insufficient_data"
+      ],
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "TEXT"
+    },
+    {
+      "name": "cases_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "total_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "period_start",
+      "type": "DATE"
+    },
+    {
+      "name": "period_end",
+      "type": "DATE"
+    },
+    {
+      "name": "supporting_review_ids",
+      "type": "JSON"
+    },
+    {
+      "name": "guideline_id",
+      "type": "UUID"
+    },
+    {
+      "name": "guideline_code",
+      "type": "TEXT"
+    },
+    {
+      "name": "recommended_action",
+      "type": "TEXT"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "new",
+        "investigating",
+        "draft_created",
+        "dismissed",
+        "resolved"
+      ],
+      "default": "new"
+    },
+    {
+      "name": "draft_guideline_id",
+      "type": "UUID"
+    },
+    {
+      "name": "confidence_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "generated_at",
+      "type": "DATETIME"
+    }
+  ]
+}

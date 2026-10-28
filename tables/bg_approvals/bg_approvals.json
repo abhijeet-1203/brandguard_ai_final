@@ -1,0 +1,89 @@
+{
+  "name": "bg_approvals",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID"
+    },
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_reviews.id"
+      }
+    },
+    {
+      "name": "version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "reviewer_id",
+      "type": "UUID"
+    },
+    {
+      "name": "reviewer_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "reviewer_name",
+      "type": "TEXT"
+    },
+    {
+      "name": "required_role",
+      "type": "ENUM",
+      "options": [
+        "admin",
+        "brand_manager",
+        "reviewer",
+        "compliance_reviewer"
+      ]
+    },
+    {
+      "name": "kind",
+      "type": "ENUM",
+      "options": [
+        "assignment",
+        "decision"
+      ],
+      "default": "assignment"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "pending",
+        "approved",
+        "rejected",
+        "changes_requested",
+        "escalated",
+        "skipped",
+        "withdrawn"
+      ],
+      "default": "pending"
+    },
+    {
+      "name": "reason",
+      "type": "TEXT"
+    },
+    {
+      "name": "is_override",
+      "type": "BOOLEAN",
+      "default": false
+    },
+    {
+      "name": "override_reason",
+      "type": "TEXT"
+    },
+    {
+      "name": "decided_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    }
+  ]
+}

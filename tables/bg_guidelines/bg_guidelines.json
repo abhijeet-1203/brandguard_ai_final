@@ -1,0 +1,155 @@
+{
+  "name": "bg_guidelines",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "code",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 40
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 300
+    },
+    {
+      "name": "description",
+      "type": "TEXT"
+    },
+    {
+      "name": "category",
+      "type": "ENUM",
+      "options": [
+        "tone",
+        "terminology",
+        "messaging",
+        "factual_accuracy",
+        "promotional_claim",
+        "visual_identity",
+        "accessibility",
+        "confidentiality",
+        "legal_compliance",
+        "formatting"
+      ],
+      "required": true
+    },
+    {
+      "name": "rule_type",
+      "type": "ENUM",
+      "options": [
+        "prohibited_term",
+        "required_term",
+        "deprecated_term",
+        "tone_rule",
+        "messaging_rule",
+        "numeric_fact",
+        "required_disclaimer",
+        "claim_policy",
+        "confidentiality_rule",
+        "visual_rule",
+        "accessibility_rule",
+        "formatting_rule"
+      ],
+      "required": true
+    },
+    {
+      "name": "severity",
+      "type": "ENUM",
+      "options": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "informational"
+      ],
+      "required": true
+    },
+    {
+      "name": "enforcement",
+      "type": "ENUM",
+      "options": [
+        "mandatory",
+        "recommended",
+        "advisory"
+      ],
+      "required": true
+    },
+    {
+      "name": "rule_text",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "compliant_examples",
+      "type": "JSON"
+    },
+    {
+      "name": "noncompliant_examples",
+      "type": "JSON"
+    },
+    {
+      "name": "match_terms",
+      "type": "JSON"
+    },
+    {
+      "name": "source_document_id",
+      "type": "UUID"
+    },
+    {
+      "name": "source_section",
+      "type": "TEXT"
+    },
+    {
+      "name": "source_page",
+      "type": "INTEGER"
+    },
+    {
+      "name": "version",
+      "type": "INTEGER",
+      "default": 1
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "draft",
+        "pending_approval",
+        "active",
+        "archived"
+      ],
+      "default": "draft"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_by_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "approved_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "approved_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "archived_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    }
+  ]
+}

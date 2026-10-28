@@ -1,0 +1,105 @@
+{
+  "name": "bg_assets",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "name",
+      "type": "TEXT",
+      "required": true,
+      "max_length": 200
+    },
+    {
+      "name": "category",
+      "type": "ENUM",
+      "options": [
+        "logo",
+        "logo_variant",
+        "image",
+        "campaign_image",
+        "template",
+        "font",
+        "brand_manual",
+        "other"
+      ],
+      "required": true
+    },
+    {
+      "name": "file_path",
+      "type": "FILE_PATH",
+      "max_length": 700
+    },
+    {
+      "name": "mime_type",
+      "type": "TEXT"
+    },
+    {
+      "name": "size_bytes",
+      "type": "INTEGER"
+    },
+    {
+      "name": "version",
+      "type": "INTEGER",
+      "default": 1
+    },
+    {
+      "name": "approval_status",
+      "type": "ENUM",
+      "options": [
+        "pending",
+        "approved",
+        "archived"
+      ],
+      "default": "pending"
+    },
+    {
+      "name": "usage_restrictions",
+      "type": "TEXT"
+    },
+    {
+      "name": "guideline_id",
+      "type": "UUID"
+    },
+    {
+      "name": "dominant_colors",
+      "type": "JSON"
+    },
+    {
+      "name": "image_hash",
+      "type": "TEXT"
+    },
+    {
+      "name": "width",
+      "type": "INTEGER"
+    },
+    {
+      "name": "height",
+      "type": "INTEGER"
+    },
+    {
+      "name": "uploaded_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "uploaded_by_email",
+      "type": "TEXT"
+    },
+    {
+      "name": "approved_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "approved_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "notes",
+      "type": "TEXT"
+    }
+  ]
+}

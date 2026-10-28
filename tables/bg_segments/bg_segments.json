@@ -1,0 +1,49 @@
+{
+  "name": "bg_segments",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_reviews.id"
+      }
+    },
+    {
+      "name": "seq",
+      "type": "INTEGER"
+    },
+    {
+      "name": "kind",
+      "type": "ENUM",
+      "options": [
+        "text",
+        "heading",
+        "image",
+        "file"
+      ]
+    },
+    {
+      "name": "content",
+      "type": "TEXT"
+    },
+    {
+      "name": "start_offset",
+      "type": "INTEGER"
+    },
+    {
+      "name": "end_offset",
+      "type": "INTEGER"
+    },
+    {
+      "name": "page",
+      "type": "INTEGER"
+    },
+    {
+      "name": "metadata",
+      "type": "JSON"
+    }
+  ]
+}

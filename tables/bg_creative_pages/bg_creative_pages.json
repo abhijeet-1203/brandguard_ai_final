@@ -1,0 +1,89 @@
+{
+  "name": "bg_creative_pages",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "scan_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "review_id",
+      "type": "UUID"
+    },
+    {
+      "name": "page_number",
+      "type": "INTEGER",
+      "required": true
+    },
+    {
+      "name": "source_path",
+      "type": "TEXT",
+      "max_length": 700
+    },
+    {
+      "name": "overlay_path",
+      "type": "TEXT",
+      "max_length": 700
+    },
+    {
+      "name": "width",
+      "type": "INTEGER"
+    },
+    {
+      "name": "height",
+      "type": "INTEGER"
+    },
+    {
+      "name": "text",
+      "type": "TEXT"
+    },
+    {
+      "name": "words",
+      "type": "JSON"
+    },
+    {
+      "name": "dual_read",
+      "type": "JSON"
+    },
+    {
+      "name": "palette",
+      "type": "JSON"
+    },
+    {
+      "name": "geometry",
+      "type": "JSON"
+    },
+    {
+      "name": "accessibility",
+      "type": "JSON"
+    },
+    {
+      "name": "logo_checks",
+      "type": "JSON"
+    },
+    {
+      "name": "regions",
+      "type": "JSON"
+    },
+    {
+      "name": "findings_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "limitations",
+      "type": "JSON"
+    },
+    {
+      "name": "status",
+      "type": "TEXT",
+      "max_length": 40
+    }
+  ]
+}

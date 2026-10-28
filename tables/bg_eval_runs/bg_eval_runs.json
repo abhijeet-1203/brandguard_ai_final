@@ -1,0 +1,82 @@
+{
+  "name": "bg_eval_runs",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID",
+      "required": true
+    },
+    {
+      "name": "engine_mode",
+      "type": "ENUM",
+      "options": [
+        "deterministic",
+        "ai",
+        "hybrid"
+      ],
+      "required": true,
+      "default": "deterministic"
+    },
+    {
+      "name": "engine_version",
+      "type": "TEXT"
+    },
+    {
+      "name": "case_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "matched_count",
+      "type": "INTEGER"
+    },
+    {
+      "name": "status",
+      "type": "ENUM",
+      "options": [
+        "running",
+        "completed",
+        "failed"
+      ],
+      "required": true,
+      "default": "running"
+    },
+    {
+      "name": "metrics",
+      "type": "JSON"
+    },
+    {
+      "name": "per_category",
+      "type": "JSON"
+    },
+    {
+      "name": "per_rule",
+      "type": "JSON"
+    },
+    {
+      "name": "insufficient",
+      "type": "JSON"
+    },
+    {
+      "name": "duration_ms",
+      "type": "INTEGER"
+    },
+    {
+      "name": "started_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "completed_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "error_message",
+      "type": "TEXT"
+    },
+    {
+      "name": "created_by",
+      "type": "TEXT"
+    }
+  ]
+}

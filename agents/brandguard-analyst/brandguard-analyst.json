@@ -1,0 +1,139 @@
+{
+  "name": "brandguard-analyst",
+  "description": "Reviews submitted content against explicitly supplied approved brand guidelines and evidence, and returns structured, evidence-linked findings.",
+  "instruction": {
+    "$file": "instruction.md"
+  },
+  "toolsets": [],
+  "visibility": "POD",
+  "permissions": {
+    "grants": []
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "summary": {
+        "type": "string",
+        "description": "Two or three sentences on the overall compliance picture, naming only grounded issues."
+      },
+      "tone_assessment": {
+        "type": "object",
+        "properties": {
+          "expected": {
+            "type": "string"
+          },
+          "observed": {
+            "type": "string"
+          },
+          "matches": {
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "expected",
+          "observed",
+          "matches"
+        ]
+      },
+      "findings": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string",
+              "enum": [
+                "tone",
+                "terminology",
+                "messaging",
+                "factual_accuracy",
+                "promotional_claim",
+                "visual",
+                "accessibility",
+                "confidentiality",
+                "formatting"
+              ]
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "severity": {
+              "type": "string",
+              "enum": [
+                "critical",
+                "high",
+                "medium",
+                "low",
+                "informational"
+              ]
+            },
+            "confidence": {
+              "type": "number"
+            },
+            "evidence_status": {
+              "type": "string",
+              "enum": [
+                "supported",
+                "contradicted",
+                "not_found",
+                "expired",
+                "ambiguous",
+                "stylistic",
+                "unverified"
+              ]
+            },
+            "original_text": {
+              "type": "string"
+            },
+            "rule_code": {
+              "type": "string"
+            },
+            "source_fact_id": {
+              "type": "string"
+            },
+            "source_note": {
+              "type": "string"
+            },
+            "explanation": {
+              "type": "string"
+            },
+            "suggested_correction": {
+              "type": "string"
+            },
+            "correction_rationale": {
+              "type": "string"
+            },
+            "requires_human_review": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "category",
+            "title",
+            "description",
+            "severity",
+            "confidence",
+            "evidence_status",
+            "explanation"
+          ]
+        }
+      },
+      "limitations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "summary",
+      "findings"
+    ]
+  }
+}

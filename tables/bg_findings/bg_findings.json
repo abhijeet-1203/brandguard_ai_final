@@ -1,0 +1,176 @@
+{
+  "name": "bg_findings",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    {
+      "name": "organization_id",
+      "type": "UUID"
+    },
+    {
+      "name": "review_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": {
+        "references": "bg_reviews.id"
+      }
+    },
+    {
+      "name": "run_id",
+      "type": "UUID"
+    },
+    {
+      "name": "version",
+      "type": "INTEGER"
+    },
+    {
+      "name": "category",
+      "type": "ENUM",
+      "options": [
+        "tone",
+        "terminology",
+        "messaging",
+        "factual_accuracy",
+        "promotional_claim",
+        "visual",
+        "accessibility",
+        "confidentiality",
+        "formatting"
+      ],
+      "required": true
+    },
+    {
+      "name": "title",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "TEXT"
+    },
+    {
+      "name": "severity",
+      "type": "ENUM",
+      "options": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "informational"
+      ],
+      "required": true
+    },
+    {
+      "name": "confidence",
+      "type": "FLOAT"
+    },
+    {
+      "name": "evidence_status",
+      "type": "ENUM",
+      "options": [
+        "supported",
+        "contradicted",
+        "not_found",
+        "expired",
+        "ambiguous",
+        "stylistic",
+        "unverified"
+      ],
+      "required": true
+    },
+    {
+      "name": "original_text",
+      "type": "TEXT"
+    },
+    {
+      "name": "location_start",
+      "type": "INTEGER"
+    },
+    {
+      "name": "location_end",
+      "type": "INTEGER"
+    },
+    {
+      "name": "location_excerpt",
+      "type": "TEXT"
+    },
+    {
+      "name": "location_page",
+      "type": "INTEGER"
+    },
+    {
+      "name": "rule_id",
+      "type": "UUID"
+    },
+    {
+      "name": "rule_code",
+      "type": "TEXT"
+    },
+    {
+      "name": "source_reference",
+      "type": "JSON"
+    },
+    {
+      "name": "explanation",
+      "type": "TEXT"
+    },
+    {
+      "name": "suggested_correction",
+      "type": "TEXT"
+    },
+    {
+      "name": "correction_rationale",
+      "type": "TEXT"
+    },
+    {
+      "name": "review_status",
+      "type": "ENUM",
+      "options": [
+        "open",
+        "accepted",
+        "rejected",
+        "resolved",
+        "escalated",
+        "wont_fix"
+      ],
+      "default": "open"
+    },
+    {
+      "name": "resolved_by",
+      "type": "TEXT"
+    },
+    {
+      "name": "resolved_at",
+      "type": "DATETIME"
+    },
+    {
+      "name": "resolution_note",
+      "type": "TEXT"
+    },
+    {
+      "name": "detection_method",
+      "type": "ENUM",
+      "options": [
+        "deterministic",
+        "ai",
+        "visual"
+      ],
+      "default": "deterministic"
+    },
+    {
+      "name": "fingerprint",
+      "type": "TEXT",
+      "max_length": 200
+    },
+    {
+      "name": "escalated_to_role",
+      "type": "ENUM",
+      "options": [
+        "admin",
+        "brand_manager",
+        "reviewer",
+        "compliance_reviewer"
+      ]
+    }
+  ]
+}
